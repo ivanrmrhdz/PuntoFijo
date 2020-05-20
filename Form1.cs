@@ -60,7 +60,7 @@ namespace PuntoFijo
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Close();
+            Close(); //cierro la ventana
         }
     }
 }
