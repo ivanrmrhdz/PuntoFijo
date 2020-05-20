@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtFx = new System.Windows.Forms.TextBox();
-            this.txtGx = new System.Windows.Forms.TextBox();
-            this.txtVi = new System.Windows.Forms.TextBox();
-            this.txtTolerancia = new System.Windows.Forms.TextBox();
+            this.btnAyuda = new System.Windows.Forms.Button();
             this.txtMaxi = new System.Windows.Forms.TextBox();
+            this.txtTolerancia = new System.Windows.Forms.TextBox();
+            this.txtVi = new System.Windows.Forms.TextBox();
+            this.txtGx = new System.Windows.Forms.TextBox();
+            this.txtFx = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
-            this.btnAyuda = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -107,35 +107,60 @@
             this.panel1.Size = new System.Drawing.Size(441, 357);
             this.panel1.TabIndex = 2;
             // 
-            // label4
+            // btnAyuda
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 18);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "g(x)";
+            this.btnAyuda.BackColor = System.Drawing.Color.White;
+            this.btnAyuda.BackgroundImage = global::PuntoFijo.Properties.Resources.information_button2;
+            this.btnAyuda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAyuda.FlatAppearance.BorderSize = 0;
+            this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAyuda.Location = new System.Drawing.Point(320, 7);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(36, 35);
+            this.btnAyuda.TabIndex = 11;
+            this.btnAyuda.UseVisualStyleBackColor = false;
+            this.btnAyuda.MouseHover += new System.EventHandler(this.btnAyuda_MouseHover);
             // 
-            // label5
+            // txtMaxi
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 186);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 18);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Valor Inicial";
+            this.txtMaxi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaxi.Location = new System.Drawing.Point(166, 299);
+            this.txtMaxi.Name = "txtMaxi";
+            this.txtMaxi.Size = new System.Drawing.Size(84, 24);
+            this.txtMaxi.TabIndex = 10;
+            this.txtMaxi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressSoloNumerosEnteros);
             // 
-            // label6
+            // txtTolerancia
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 246);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 18);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Tolerancia";
+            this.txtTolerancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTolerancia.Location = new System.Drawing.Point(136, 243);
+            this.txtTolerancia.Name = "txtTolerancia";
+            this.txtTolerancia.Size = new System.Drawing.Size(203, 24);
+            this.txtTolerancia.TabIndex = 9;
+            // 
+            // txtVi
+            // 
+            this.txtVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVi.Location = new System.Drawing.Point(136, 183);
+            this.txtVi.Name = "txtVi";
+            this.txtVi.Size = new System.Drawing.Size(203, 24);
+            this.txtVi.TabIndex = 8;
+            // 
+            // txtGx
+            // 
+            this.txtGx.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGx.Location = new System.Drawing.Point(136, 122);
+            this.txtGx.Name = "txtGx";
+            this.txtGx.Size = new System.Drawing.Size(203, 24);
+            this.txtGx.TabIndex = 7;
+            // 
+            // txtFx
+            // 
+            this.txtFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFx.Location = new System.Drawing.Point(136, 66);
+            this.txtFx.Name = "txtFx";
+            this.txtFx.Size = new System.Drawing.Size(203, 24);
+            this.txtFx.TabIndex = 6;
             // 
             // label7
             // 
@@ -147,46 +172,35 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Máximo de Iteraciones";
             // 
-            // txtFx
+            // label6
             // 
-            this.txtFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFx.Location = new System.Drawing.Point(136, 66);
-            this.txtFx.Name = "txtFx";
-            this.txtFx.Size = new System.Drawing.Size(203, 24);
-            this.txtFx.TabIndex = 6;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 246);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 18);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Tolerancia";
             // 
-            // txtGx
+            // label5
             // 
-            this.txtGx.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGx.Location = new System.Drawing.Point(42, 121);
-            this.txtGx.Name = "txtGx";
-            this.txtGx.Size = new System.Drawing.Size(208, 24);
-            this.txtGx.TabIndex = 7;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 186);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 18);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Valor Inicial";
             // 
-            // txtVi
+            // label4
             // 
-            this.txtVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVi.Location = new System.Drawing.Point(91, 183);
-            this.txtVi.Name = "txtVi";
-            this.txtVi.Size = new System.Drawing.Size(159, 24);
-            this.txtVi.TabIndex = 8;
-            // 
-            // txtTolerancia
-            // 
-            this.txtTolerancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTolerancia.Location = new System.Drawing.Point(86, 243);
-            this.txtTolerancia.Name = "txtTolerancia";
-            this.txtTolerancia.Size = new System.Drawing.Size(164, 24);
-            this.txtTolerancia.TabIndex = 9;
-            // 
-            // txtMaxi
-            // 
-            this.txtMaxi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaxi.Location = new System.Drawing.Point(166, 299);
-            this.txtMaxi.Name = "txtMaxi";
-            this.txtMaxi.Size = new System.Drawing.Size(84, 24);
-            this.txtMaxi.TabIndex = 10;
-            this.txtMaxi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressSoloNumerosEnteros);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 124);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 18);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "g(x)";
             // 
             // panel2
             // 
@@ -208,6 +222,7 @@
             this.btnSalir.Size = new System.Drawing.Size(71, 41);
             this.btnSalir.TabIndex = 5;
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             this.btnSalir.MouseHover += new System.EventHandler(this.btnSalir_MouseHover);
             // 
             // btnLimpiar
@@ -236,38 +251,24 @@
             this.btnCheck.UseVisualStyleBackColor = true;
             this.btnCheck.MouseHover += new System.EventHandler(this.btnCheck_MouseHover);
             // 
-            // btnAyuda
-            // 
-            this.btnAyuda.BackColor = System.Drawing.Color.White;
-            this.btnAyuda.BackgroundImage = global::PuntoFijo.Properties.Resources.information_button2;
-            this.btnAyuda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAyuda.FlatAppearance.BorderSize = 0;
-            this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAyuda.Location = new System.Drawing.Point(320, 7);
-            this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(36, 35);
-            this.btnAyuda.TabIndex = 11;
-            this.btnAyuda.UseVisualStyleBackColor = false;
-            this.btnAyuda.MouseHover += new System.EventHandler(this.btnAyuda_MouseHover);
-            // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(500, 81);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Legend = "Legend1";
-            series3.Name = "Gx";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Legend = "Legend1";
-            series4.Name = "Identidad";
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "Gx";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Identidad";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(460, 357);
             this.chart1.TabIndex = 7;
             this.chart1.Text = "chart1";
@@ -277,7 +278,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(973, 515);
+            this.ClientSize = new System.Drawing.Size(983, 520);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnSalir);
