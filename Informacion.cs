@@ -24,6 +24,7 @@ namespace PuntoFijo
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //cerrar ventana
             this.Close();
         }
     }

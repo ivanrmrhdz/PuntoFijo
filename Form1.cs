@@ -231,6 +231,8 @@ namespace PuntoFijo
         {
             Ventana_de_Ayuda c = new Ventana_de_Ayuda();
             c.ShowDialog();
+
+
         }
     }
 
