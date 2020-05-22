@@ -83,6 +83,26 @@ namespace PuntoFijo.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ejemplos {
+            get {
+                object obj = ResourceManager.GetObject("Ejemplos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Grafica1 {
+            get {
+                object obj = ResourceManager.GetObject("Grafica1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap information_button {
             get {
                 object obj = ResourceManager.GetObject("information-button", resourceCulture);
@@ -116,6 +136,16 @@ namespace PuntoFijo.Properties {
         internal static System.Drawing.Bitmap salir_btn {
             get {
                 object obj = ResourceManager.GetObject("salir-btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tabla {
+            get {
+                object obj = ResourceManager.GetObject("Tabla", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

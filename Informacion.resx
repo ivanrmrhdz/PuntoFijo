@@ -117,17 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label3.Text" xml:space="preserve">
-    <value>La grafica y la obtencion de datos puede diferir dependiendo de como se escriba la funcion. La funcion solo sera reconocida si se escribe en terminos de "x" (minuscula). Se recomienda escribir (x)^n para exponentes, como si de una calculadora convencional se tratase. Si no se usa el parentesis asì, se obtendran resultados negativos sin importar el exponente. Al mismo tiempo puede escribir raices de esta manera: (x)^(1/2) para raiz cuadrada, por ejemplo. Al involucrar un producto debemos agregar el signo de multiplicacion "*" asi: 3*x. Al mismo tiempo, si se desea involucrar a varios elementos en una sola operacion, hacer uso eficiente de los parentesis asi: (x + 3*x)/20.</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>La gráfica y la obtención de datos puede diferir dependiendo de cómo se escriba la función. La función solo será reconocida si se escribe en términos de "x" (minúscula).
+
+Usando el Método de Punto Fijo
+El método de punto fijo consiste en evaluar repetidas veces una función x = g(x) hasta que el resultado tienda a un valor numérico en especifico
+</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Las funciones trigonometricas son reconocidas en inglès, asi: cos(x), sin(x), etc. Por favor no olvidar la importancia de el uso de parentesis. En cuanto a sumas y restas, simplemente agregue el signo.
-
-En este apartado del metodo punto fijo, necesitara la funcion extra g(x). Para encontrarla debe hacer f(x)=0, luego despejar hasta llegar a x = g(x). Esa funcion nueva se usara para las distintas iteraciones generadas por el programa. Procure ingresar correctamente g(x) para que el programa muestre una raiz correcta de f(x)
-
-
-Usando el Metodo de Punto fijo
-El metodo de punto fijo consiste en evaluar repetidas veces una funcion x = g(x) hasta que el resultado tienda a un valor numerico en especifico
+  <data name="label7.Text" xml:space="preserve">
+    <value>Se dice que la raíz se encuentra donde la gráfica de la función g(x) se intercepta con la función identidad (y=x). Es importante observar la gráfica para elegir un valor inicial apropiado, recuerde que entre más cerca este el valor inicial de la raíz, menos iteraciones se necesitaran para llegar a ella.
+El error relativo o tolerancia se refiere a que tanta incerteza acepta en su respuesta. Por ejemplo, un 0.01% de error (0.00001 en decimales). El programa tomara solamente números decimales (0.0001 por ejemplo)
+El número máximo de iteraciones se refiere a cuantas veces Se evaluará en caso de no llegar al error deseado. Esto limita al programa a no hacer un sinfín de iteraciones si el error variara demasiado.
+Si se encuentra más de una raíz de f(x), el programa llegara a la primera raíz (de izq. a der.) más cercana al valor inicial dado
 </value>
   </data>
 </root>

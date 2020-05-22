@@ -27,5 +27,15 @@ namespace PuntoFijo
             //cerrar ventana
             this.Close();
         }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

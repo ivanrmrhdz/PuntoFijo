@@ -112,5 +112,17 @@
   <ItemGroup>
     <None Include="Resources\salir-btn.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tabla.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ejemplos.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grafica.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grafica1.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
