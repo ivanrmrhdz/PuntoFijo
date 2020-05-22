@@ -36,7 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAyuda = new System.Windows.Forms.Button();
             this.txtMaxi = new System.Windows.Forms.TextBox();
             this.txtTolerancia = new System.Windows.Forms.TextBox();
             this.txtVi = new System.Windows.Forms.TextBox();
@@ -47,10 +46,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnAyuda = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -104,62 +104,50 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(12, 81);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(441, 357);
+            this.panel1.Size = new System.Drawing.Size(441, 412);
             this.panel1.TabIndex = 2;
-            // 
-            // btnAyuda
-            // 
-            this.btnAyuda.BackColor = System.Drawing.Color.White;
-            this.btnAyuda.BackgroundImage = global::PuntoFijo.Properties.Resources.information_button2;
-            this.btnAyuda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAyuda.FlatAppearance.BorderSize = 0;
-            this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAyuda.Location = new System.Drawing.Point(320, 7);
-            this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(36, 35);
-            this.btnAyuda.TabIndex = 11;
-            this.btnAyuda.UseVisualStyleBackColor = false;
-            this.btnAyuda.MouseHover += new System.EventHandler(this.btnAyuda_MouseHover);
             // 
             // txtMaxi
             // 
-            this.txtMaxi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaxi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaxi.Location = new System.Drawing.Point(166, 299);
             this.txtMaxi.Name = "txtMaxi";
-            this.txtMaxi.Size = new System.Drawing.Size(84, 24);
+            this.txtMaxi.Size = new System.Drawing.Size(84, 29);
             this.txtMaxi.TabIndex = 10;
             this.txtMaxi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressSoloNumerosEnteros);
             // 
             // txtTolerancia
             // 
-            this.txtTolerancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTolerancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTolerancia.Location = new System.Drawing.Point(136, 243);
             this.txtTolerancia.Name = "txtTolerancia";
-            this.txtTolerancia.Size = new System.Drawing.Size(203, 24);
+            this.txtTolerancia.Size = new System.Drawing.Size(203, 29);
             this.txtTolerancia.TabIndex = 9;
+            this.txtTolerancia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressDecimales);
             // 
             // txtVi
             // 
-            this.txtVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVi.Location = new System.Drawing.Point(136, 183);
             this.txtVi.Name = "txtVi";
-            this.txtVi.Size = new System.Drawing.Size(203, 24);
+            this.txtVi.Size = new System.Drawing.Size(203, 29);
             this.txtVi.TabIndex = 8;
+            this.txtVi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressDecimales);
             // 
             // txtGx
             // 
-            this.txtGx.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGx.Location = new System.Drawing.Point(136, 122);
             this.txtGx.Name = "txtGx";
-            this.txtGx.Size = new System.Drawing.Size(203, 24);
+            this.txtGx.Size = new System.Drawing.Size(203, 29);
             this.txtGx.TabIndex = 7;
             // 
             // txtFx
             // 
-            this.txtFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFx.Location = new System.Drawing.Point(136, 66);
+            this.txtFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFx.Location = new System.Drawing.Point(136, 69);
             this.txtFx.Name = "txtFx";
-            this.txtFx.Size = new System.Drawing.Size(203, 24);
+            this.txtFx.Size = new System.Drawing.Size(203, 29);
             this.txtFx.TabIndex = 6;
             // 
             // label7
@@ -176,7 +164,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 246);
+            this.label6.Location = new System.Drawing.Point(53, 250);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 18);
             this.label6.TabIndex = 4;
@@ -186,7 +174,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 186);
+            this.label5.Location = new System.Drawing.Point(48, 190);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 18);
             this.label5.TabIndex = 3;
@@ -196,7 +184,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 124);
+            this.label4.Location = new System.Drawing.Point(97, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 18);
             this.label4.TabIndex = 2;
@@ -208,8 +196,89 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(973, 75);
+            this.panel2.Size = new System.Drawing.Size(988, 75);
             this.panel2.TabIndex = 6;
+            // 
+            // chart1
+            // 
+            chartArea1.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal;
+            chartArea1.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position;
+            chartArea1.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea1.AxisX.Crossing = 0D;
+            chartArea1.AxisX.Interval = 1D;
+            chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.IsMarginVisible = false;
+            chartArea1.AxisX.IsStartedFromZero = false;
+            chartArea1.AxisX.LabelAutoFitMaxFontSize = 8;
+            chartArea1.AxisX.LabelAutoFitStyle = ((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles)((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) 
+            | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.StaggeredLabels) 
+            | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep30) 
+            | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep45) 
+            | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.WordWrap)));
+            chartArea1.AxisX.LabelStyle.Angle = 2;
+            chartArea1.AxisX.LabelStyle.Interval = 5D;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.Red;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea1.AxisX.Maximum = 15D;
+            chartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea1.AxisX.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.Wave;
+            chartArea1.AxisX.ScaleBreakStyle.Enabled = true;
+            chartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea1.AxisX2.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines;
+            chartArea1.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines;
+            chartArea1.AxisY.Crossing = 0D;
+            chartArea1.AxisY.Interval = 1D;
+            chartArea1.AxisY.LabelAutoFitMaxFontSize = 8;
+            chartArea1.AxisY.LabelAutoFitStyle = ((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles)((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) 
+            | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.StaggeredLabels) 
+            | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep30) 
+            | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep45) 
+            | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.WordWrap)));
+            chartArea1.AxisY.LabelStyle.Interval = 5D;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.Red;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea1.AxisY.Maximum = 15D;
+            chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea1.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea1.BorderColor = System.Drawing.Color.White;
+            chartArea1.InnerPlotPosition.Auto = false;
+            chartArea1.InnerPlotPosition.Height = 88.4641F;
+            chartArea1.InnerPlotPosition.Width = 86F;
+            chartArea1.InnerPlotPosition.X = 14F;
+            chartArea1.InnerPlotPosition.Y = 5F;
+            chartArea1.IsSameFontSizeForAllAxes = true;
+            chartArea1.Name = "ChartArea1";
+            chartArea1.ShadowColor = System.Drawing.Color.DarkGray;
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(459, 81);
+            this.chart1.Name = "chart1";
+            series1.BorderColor = System.Drawing.Color.Gray;
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.Lime;
+            series1.LabelBorderWidth = 2;
+            series1.Legend = "Legend1";
+            series1.Name = "Gx";
+            series2.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            series2.BorderColor = System.Drawing.Color.White;
+            series2.BorderWidth = 2;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.DarkBlue;
+            series2.LabelBorderWidth = 2;
+            series2.Legend = "Legend1";
+            series2.Name = "Identidad";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(512, 412);
+            this.chart1.TabIndex = 7;
+            this.chart1.Text = "Grafica";
+            this.chart1.UseWaitCursor = true;
             // 
             // btnSalir
             // 
@@ -217,7 +286,7 @@
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSalir.Location = new System.Drawing.Point(890, 462);
+            this.btnSalir.Location = new System.Drawing.Point(900, 499);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(71, 41);
             this.btnSalir.TabIndex = 5;
@@ -231,11 +300,12 @@
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLimpiar.Location = new System.Drawing.Point(79, 464);
+            this.btnLimpiar.Location = new System.Drawing.Point(79, 500);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(82, 39);
             this.btnLimpiar.TabIndex = 4;
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             this.btnLimpiar.MouseHover += new System.EventHandler(this.btnLimpiar_MouseHover);
             // 
             // btnCheck
@@ -244,41 +314,35 @@
             this.btnCheck.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCheck.FlatAppearance.BorderSize = 0;
             this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCheck.Location = new System.Drawing.Point(179, 464);
+            this.btnCheck.Location = new System.Drawing.Point(179, 500);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(117, 39);
             this.btnCheck.TabIndex = 3;
             this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             this.btnCheck.MouseHover += new System.EventHandler(this.btnCheck_MouseHover);
             // 
-            // chart1
+            // btnAyuda
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(500, 81);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "Gx";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Identidad";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(460, 357);
-            this.chart1.TabIndex = 7;
-            this.chart1.Text = "chart1";
+            this.btnAyuda.BackColor = System.Drawing.Color.White;
+            this.btnAyuda.BackgroundImage = global::PuntoFijo.Properties.Resources.information_button2;
+            this.btnAyuda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAyuda.FlatAppearance.BorderSize = 0;
+            this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAyuda.Location = new System.Drawing.Point(320, 7);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(36, 35);
+            this.btnAyuda.TabIndex = 11;
+            this.btnAyuda.UseVisualStyleBackColor = false;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
+            this.btnAyuda.MouseHover += new System.EventHandler(this.btnAyuda_MouseHover);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(983, 520);
+            this.ClientSize = new System.Drawing.Size(983, 552);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnSalir);
