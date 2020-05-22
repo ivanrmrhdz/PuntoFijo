@@ -108,15 +108,16 @@ namespace PuntoFijo
         {
             string _Fx = txtFx.Text;
             string _Gx = txtGx.Text;
-            Argument x = new Argument("x = 1");//valor para evaluar las funciones ingresadas
+          
+            /*Argument x = new Argument("x = 1");//valor para evaluar las funciones ingresadas
             //Se hacen las expresiones de las funciones, con la libreria de MathParse
             Expression Fx = new Expression(_Fx, x);
             Expression Gx = new Expression(_Gx, x);
-           
+           */
 
 
             //Se valida que al evaluar las funciones retornen un valor numerico double 
-            if (double.IsNaN(Fx.calculate()) || double.IsNaN(Gx.calculate()))
+            if (double.IsNaN(eFuncion(_Fx, "1")) || double.IsNaN(eFuncion(_Gx, "1")))
             {
                 //si la funcion es inválida muestra el mensaje
                 MessageBox.Show("Funciones No Validas, revise la seccion de Información", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -129,18 +130,20 @@ namespace PuntoFijo
                 double valini = float.Parse(txtVi.Text);
                 double tol = float.Parse(txtTolerancia.Text);
                 int maxI = int.Parse(txtMaxi.Text);
-                
+                /*
                 Argument _Vi = new Argument("x = "+ txtVi.Text);//valor inicial
                 Expression dxGx = new Expression("der(" + _Gx + ", x)", _Vi);//Derivada de la funcion g(x)
-
+                */
+                string _dxGx = "der("+_Gx+", x)";
+                double dxGx = eFuncion(_dxGx ,txtVi.Text);//Se evalua la derivada de g(x)
                 //se evalua si la funcion es divergente
-                if (dxGx.calculate()<1 && dxGx.calculate() > -1)
+                if (dxGx<1 && dxGx>-1)
                 {
                     PuntoFijo(valini, tol, maxI);
                 }
                 else
                 {
-                    MessageBox.Show(dxGx.calculate()+ "La derivada de la funcion nos dice que divergera!. Elija otro punto inicial, o utilice otro método.", "La prueba de punto fijo divergera!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(dxGx+"La derivada de la funcion nos dice que divergera!. Elija otro punto inicial, o utilice otro método.", "La prueba de punto fijo divergera!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
             }
@@ -158,12 +161,14 @@ namespace PuntoFijo
             do
             {
                 x_anterior = x;//se guarda el valor actual de x
-
+                /*
                 // usando mathparse obtenemos un nuevo valor de x en g(x)
                 Argument _x = new Argument("x ="+ x.ToString());//valor actual de x
                 Expression Gx = new Expression(txtGx.Text, _x);
                 x = Gx.calculate();//nuevo valor de x
-               
+               */
+
+                x = eFuncion(txtGx.Text, x.ToString());//evaluando la funcion para obtener el nuevo valor de x
                 n++;//se suma al contador de iteraciones
 
                 if (n > 1)
@@ -185,12 +190,14 @@ namespace PuntoFijo
             } while (n <= iteracionesMax && porcentaje>tolerancia);
 
            
-
+            /*
             // usando mathparse evaluamos la funcion f(x) con el ultimo valor de x obtenido
             Argument _x2 = new Argument("x = "+x.ToString());//valor actual de x
             Expression Fx = new Expression(txtFx.Text, _x2);
-            
-            if (Fx.calculate()<=-0.01 || Fx.calculate()>=0.01)
+            */
+
+
+            if (eFuncion(txtFx.Text, x.ToString())<=-0.01 || eFuncion(txtFx.Text, x.ToString())>= 0.01)
             // si no se llega ni cerca de un cero, entonces mostramos una alerta
             {
                 MessageBox.Show("No se encuentra ninguna raiz en el intervalo dado!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -201,11 +208,9 @@ namespace PuntoFijo
                 
                 for (double i = -10.0; i < 10.0; i += 0.5)
                 {
-                    // usando mathparse obtenemos un nuevo valor de x en g(x)
-                    Argument _x = new Argument("x =" + i.ToString());//valor actual de x
-                    Expression Gx = new Expression(txtGx.Text, _x);
-                    x = Gx.calculate();//nuevo valor de x
+                    
 
+                     x = eFuncion(txtGx.Text, i.ToString());//se evalua la funcion en el intervalo definido para graficar
                     chart1.Series["Gx"].Points.AddXY(i, x);
                     chart1.Series["Identidad"].Points.AddXY(i, i);
                     
@@ -222,6 +227,17 @@ namespace PuntoFijo
 
         }
 
+        public double eFuncion(string funcion, string argumento)
+        {
+            double resultado = 0;
+            // usando mathparse evaluamos la funcion con el valor de x
+            Argument x = new Argument("x = "+ argumento);//valor de x
+            Expression Gx = new Expression(funcion, x);//se evalua la funcion
+            resultado = Gx.calculate();//se asigna el resultado
+
+
+            return resultado;
+        } 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
            
