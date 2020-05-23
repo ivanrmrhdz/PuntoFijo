@@ -101,7 +101,7 @@ namespace PuntoFijo
             {
 
                 Validaciones();
-
+               
             }
            
         }
@@ -145,7 +145,7 @@ namespace PuntoFijo
                 }
                 else
                 {
-                    MessageBox.Show(dxGx+"La derivada de la funcion nos dice que divergera!. Elija otro punto inicial, o utilice otro método.", "La prueba de punto fijo divergera!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("La derivada de la funcion nos dice que divergera!. Elija otro punto inicial, o utilice otro método.", "La prueba de punto fijo divergera!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
             }
@@ -154,6 +154,9 @@ namespace PuntoFijo
 
         void PuntoFijo(double valorInicial, double tolerancia, int iteracionesMax)
         {
+            chart1.Series["Gx"].Points.Clear();
+            chart1.Series["Identidad"].Points.Clear();
+            chart1.Titles.Clear();
 
             int n = 0;
             double x = valorInicial;
@@ -191,31 +194,41 @@ namespace PuntoFijo
 
             } while (n <= iteracionesMax && porcentaje>tolerancia);
 
-           
+            double xResult = x;
             /*
             // usando mathparse evaluamos la funcion f(x) con el ultimo valor de x obtenido
             Argument _x2 = new Argument("x = "+x.ToString());//valor actual de x
             Expression Fx = new Expression(txtFx.Text, _x2);
             */
-
+          //  double a = eFuncion(txtFx.Text, x.ToString());
 
             if (eFuncion(txtFx.Text, x.ToString())<=-0.01 || eFuncion(txtFx.Text, x.ToString())>= 0.01)
             // si no se llega ni cerca de un cero, entonces mostramos una alerta
             {
-                MessageBox.Show("No se encuentra ninguna raiz en el intervalo dado!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No se encuentra ninguna raiz en el intervalo dado!\n"
+                    +"Revise la Grafica para escoger otro Valor Inicial", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               
+                String titulo = "Se presenta la grafica de g(x) = " + txtGx.Text;
+                chart1.Titles.Add(titulo);
+                for (double i = -6.0; i < 6.0; i += 0.5)
+                {
 
+
+                    x = eFuncion(txtGx.Text, i.ToString());//se evalua la funcion en el intervalo definido para graficar -10.0 hasta 10.0
+                    chart1.Series["Gx"].Points.AddXY(i, x);
+                    chart1.Series["Identidad"].Points.AddXY(i, i);
+
+                }
             }
             else
             {
                 String titulo = "Se presenta la grafica de g(x) = "+txtGx.Text;
                 chart1.Titles.Add(titulo);
-
-
-                for (double i = -10.0; i < 10.0; i += 0.5)
+                for (double i = -6.0; i < 6.0; i += 0.5)
                 {
                     
 
-                     x = eFuncion(txtGx.Text, i.ToString());//se evalua la funcion en el intervalo definido para graficar
+                     x = eFuncion(txtGx.Text, i.ToString());//se evalua la funcion en el intervalo definido para graficar -10.0 hasta 10.0
                     chart1.Series["Gx"].Points.AddXY(i, x);
                     chart1.Series["Identidad"].Points.AddXY(i, i);
                     
@@ -223,9 +236,13 @@ namespace PuntoFijo
              
                 // si se llego cerca de cero, se generan los resultados 
 
-                MessageBox.Show(porcentaje+"El programa encontró resultados con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El programa encontró resultados con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-             
+                activarTextBox();
+                txtRRaiz.Text = xResult.ToString();
+                txtRError.Text = porcentaje.ToString();
+                txtRIter.Text = n.ToString();
+                txtRFuncion.Text = txtFx.Text;
 
             }
 
@@ -243,9 +260,36 @@ namespace PuntoFijo
 
             return resultado;
         } 
+        public void activarTextBox()
+        {
+            txtRRaiz.Enabled = true;
+            txtRError.Enabled = true;
+            txtRIter.Enabled = true;
+            txtRFuncion.Enabled = true;
+
+        }
+        public void DesactivarTextBox()
+        {
+            txtRRaiz.Text = "";
+            txtRError.Text = "";
+            txtRIter.Text = "";
+            txtRFuncion.Text = "";
+            txtRRaiz.Enabled = false;
+            txtRError.Enabled = false;
+            txtRIter.Enabled = false;
+            txtRFuncion.Enabled = false;
+
+        }
+
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-           
+            txtFx.Text = "";
+            txtGx.Text = "";
+            txtMaxi.Text = "";
+            txtTolerancia.Text = "";
+            txtVi.Text = "";
+            DesactivarTextBox();
+            txtFx.Focus();
         }
 
         private void btnAyuda_Click(object sender, EventArgs e)
@@ -256,6 +300,18 @@ namespace PuntoFijo
             
 
 
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtFx_TextChanged(object sender, EventArgs e)
+        {
+           /* chart1.Series["Gx"].Points.Clear();
+            chart1.Series["Identidad"].Points.Clear();
+            chart1.Titles.Clear();*/
         }
     }
 
