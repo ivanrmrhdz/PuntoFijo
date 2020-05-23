@@ -27,6 +27,8 @@ namespace PuntoFijo
             txtTolerancia.Text = "0.5";
             txtVi.Text = "2";
 
+        
+
         }
 
         private void btnAyuda_MouseHover(object sender, EventArgs e)
@@ -205,7 +207,10 @@ namespace PuntoFijo
             }
             else
             {
-                
+                String titulo = "Se presenta la grafica de g(x) = "+txtGx.Text;
+                chart1.Titles.Add(titulo);
+
+
                 for (double i = -10.0; i < 10.0; i += 0.5)
                 {
                     
@@ -245,8 +250,10 @@ namespace PuntoFijo
 
         private void btnAyuda_Click(object sender, EventArgs e)
         {
-            Ventana_de_Ayuda c = new Ventana_de_Ayuda();
-            c.ShowDialog();
+
+            Informacion2 i = new Informacion2();
+            i.ShowDialog();
+            
 
 
         }

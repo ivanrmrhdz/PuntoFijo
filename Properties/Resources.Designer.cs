@@ -103,6 +103,16 @@ namespace PuntoFijo.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap grafica2 {
+            get {
+                object obj = ResourceManager.GetObject("grafica2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap information_button {
             get {
                 object obj = ResourceManager.GetObject("information-button", resourceCulture);
