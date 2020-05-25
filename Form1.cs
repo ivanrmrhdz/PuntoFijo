@@ -216,7 +216,7 @@ namespace PuntoFijo
                 for (double i = -6.0; i < 6.0; i += 0.5)
                 {
 
-                     x = eFuncion(txtGx.Text, i.ToString());//se evalua la funcion en el intervalo definido para graficar -6.0 hasta 6.0
+                    x = eFuncion(txtGx.Text, i.ToString());//se evalua la funcion en el intervalo definido para graficar -6.0 hasta 6.0
                     chart1.Series["Gx"].Points.AddXY(i, x);
                     chart1.Series["Identidad"].Points.AddXY(i, i);
                     
