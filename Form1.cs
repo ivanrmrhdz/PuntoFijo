@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using org.mariuszgromada.math.mxparser;
 
 
@@ -27,6 +28,7 @@ namespace PuntoFijo
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Se ponen valores iniciales con motivo de Ejemplo
             txtFx.Text = "e^(-x)-x";
             txtGx.Text = "e^(-x)";
             txtMaxi.Text = "10";
@@ -37,33 +39,27 @@ namespace PuntoFijo
         private void btnAyuda_MouseHover(object sender, EventArgs e)
         {
             System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
-            ToolTip1.SetToolTip(this.btnAyuda, "Información");
+            ToolTip1.SetToolTip(this.btnAyuda, "Información");//Al mantener el Mouse sobre el Boton se muestra el mansaje
         }
 
         private void btnLimpiar_MouseHover(object sender, EventArgs e)
         {
             System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
-            ToolTip1.SetToolTip(this.btnAyuda, "Limpiar Texto");
+            ToolTip1.SetToolTip(this.btnAyuda, "Limpiar Texto");//Al mantener el Mouse sobre el Boton se muestra el mansaje
         }
 
         private void btnCheck_MouseHover(object sender, EventArgs e)
         {
             System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
-            ToolTip1.SetToolTip(this.btnAyuda, "Realizar Operación");
+            ToolTip1.SetToolTip(this.btnAyuda, "Realizar Operación");//Al mantener el Mouse sobre el Boton se muestra el mansaje
         }
 
         private void btnSalir_MouseHover(object sender, EventArgs e)
         {
             System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
-            ToolTip1.SetToolTip(this.btnAyuda, "Salir del Programa");
+            ToolTip1.SetToolTip(this.btnAyuda, "Salir del Programa");//Al mantener el Mouse sobre el Boton se muestra el mansaje
         }
-
-        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back);
-
-        }
-      
+  
         //Validacion de numeros enteros
         private void KeyPressSoloNumerosEnteros(object sender, KeyPressEventArgs e)
         {
@@ -86,19 +82,28 @@ namespace PuntoFijo
                     e.Handled = true;
             }
         }
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)//Accion de Boton Cerrar 
         {
-            Close(); //cierro la ventana
+             DialogResult res = MessageBox.Show("Realmente quiere salir del programa?", "Salir", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (res == DialogResult.OK)
+            {
+
+                this.Close();//cierro la ventana
+            }
+            else
+            {
+
+            } 
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-
+            //Se validan que los Campos esten Vacios
             if(string.IsNullOrEmpty(txtFx.Text) || string.IsNullOrEmpty(txtGx.Text) || string.IsNullOrEmpty(txtMaxi.Text)
                 || string.IsNullOrEmpty(txtTolerancia.Text) || string.IsNullOrEmpty(txtVi.Text))
             {
 
-                MessageBox.Show("Tiene Campos Vacios", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tiene Campos Vacios.", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -109,7 +114,7 @@ namespace PuntoFijo
            
         }
 
-        void Validaciones()
+        public void Validaciones()
         {
             string _Fx = txtFx.Text;
             string _Gx = txtGx.Text;
@@ -124,13 +129,15 @@ namespace PuntoFijo
             else
             {
                 //si las funciones son válidas se ejecuta el siguiente codigo
-
+                
+                //Obteniendo los Valores de los TextBox
                 double valini = float.Parse(txtVi.Text);
                 double tol = float.Parse(txtTolerancia.Text);
                 int maxI = int.Parse(txtMaxi.Text);
 
-                string _dxGx = "der("+_Gx+", x)";
-                double dxGx = eFuncion(_dxGx ,txtVi.Text);//Se evalua la derivada de g(x)
+                string _dxGx = "der("+_Gx+", x)";//Para Calcular la derivada de g(x)
+                double dxGx = eFuncion(_dxGx ,txtVi.Text);//Se evalua la derivada de g(x) con el Valor incial Insertado
+               
                 //se evalua si la funcion es divergente
                 if (dxGx<1 && dxGx>-1)
                 {
@@ -147,19 +154,21 @@ namespace PuntoFijo
 
         void PuntoFijo(double valorInicial, double tolerancia, int iteracionesMax)
         {
+            //Se Limpian los Puntos Para Evitar Sobrecargas 
             chart1.Series["Gx"].Points.Clear();
             chart1.Series["Identidad"].Points.Clear();
             chart1.Titles.Clear();
 
-            int n = 0;
-            double x = valorInicial;
-            double x_anterior = 0;
-            double porcentaje = 100;
+            int n = 0;//Contador de Iteraciones
+            double x = valorInicial;//Valor Inicial
+            double x_anterior;// Variable que va a contener el Valor Anterior de x
+            double porcentaje = 100;//Porcentaje de Error
 
-            //si hay error se agrega a la tabla
+          
 
-            dgvTabla_resultados.Rows.Clear();
+            dgvTabla_resultados.Rows.Clear();//Se Limpian las Filas 
 
+            //Iteraciones
             do
             {
                 x_anterior = x;//se guarda el valor actual de x
@@ -171,19 +180,18 @@ namespace PuntoFijo
                 {
                     porcentaje = Math.Abs(((x - x_anterior) / x) * 100);//Valor absoluto del porcentaje de error
 
-                    
+                    //si hay error se agrega a la tabla
                     llenarTabla(n, x_anterior, x, porcentaje.ToString()); //lleno la tabla
                 }
                 else
-                {
+                {  
+                    //En la Primera Iteracion No se agrega el Error
                     llenarTabla(n, x_anterior, x, " - "); //lleno la tabla
                 }
 
-               
+            } while (n <= iteracionesMax && porcentaje>tolerancia);//Fin del Ciclo
 
-            } while (n <= iteracionesMax && porcentaje>tolerancia);
-
-            double xResult = x;
+            double xResult = x;//Se guarda el ultimo valor de X para los Resultados
 
             if (eFuncion(txtFx.Text, x.ToString())<=-0.01 || eFuncion(txtFx.Text, x.ToString())>= 0.01)
             // si no se llega ni cerca de un cero, entonces mostramos una alerta
@@ -191,35 +199,31 @@ namespace PuntoFijo
                 MessageBox.Show("No se encuentra ninguna raiz en el intervalo dado!\n"
                     +"Revise la Grafica para escoger otro Valor Inicial", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                
+                //Se muestra la Grafica
                 String titulo = "Se presenta la grafica de g(x) = " + txtGx.Text;
                 chart1.Titles.Add(titulo);
                 for (double i = -6.0; i < 6.0; i += 0.5)
                 {
-
-
-                    x = eFuncion(txtGx.Text, i.ToString());//se evalua la funcion en el intervalo definido para graficar -10.0 hasta 10.0
+                    x = eFuncion(txtGx.Text, i.ToString());//se evalua la funcion en el intervalo definido para graficar -6.0 hasta 6.0
                     chart1.Series["Gx"].Points.AddXY(i, x);
                     chart1.Series["Identidad"].Points.AddXY(i, i);
-
                 }
             }
             else
-            {
+            {//Si se llega cerca de cero se Muestran los Resultados
+                //Se muestra la Grafica
                 String titulo = "Se presenta la grafica de g(x) = "+txtGx.Text;
                 chart1.Titles.Add(titulo);
                 for (double i = -6.0; i < 6.0; i += 0.5)
                 {
 
-                     x = eFuncion(txtGx.Text, i.ToString());//se evalua la funcion en el intervalo definido para graficar -10.0 hasta 10.0
+                     x = eFuncion(txtGx.Text, i.ToString());//se evalua la funcion en el intervalo definido para graficar -6.0 hasta 6.0
                     chart1.Series["Gx"].Points.AddXY(i, x);
                     chart1.Series["Identidad"].Points.AddXY(i, i);
                     
-                }
-             
-                // si se llego cerca de cero, se generan los resultados 
-
+                }           
                 MessageBox.Show("El programa encontró resultados con éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                //Se Asigna el Texto a los Label
                 lbRaiz.Text = xResult.ToString();
                 lbER.Text = porcentaje.ToString();
                 lbIteraciones.Text = n.ToString();
@@ -229,31 +233,30 @@ namespace PuntoFijo
 
 
         }
-
-        public double eFuncion(string funcion, string argumento)
+    
+        public double eFuncion(string funcion, string argumento)//Para Evaluar Funciones Usanfo MathParse
         {
-            double resultado = 0;
+            double resultado;
             // usando mathparse evaluamos la funcion con el valor de x
             Argument x = new Argument("x = "+ argumento);//valor de x
             Expression Gx = new Expression(funcion, x);//se evalua la funcion
             resultado = Gx.calculate();//se asigna el resultado
-
-
             return resultado;
         } 
 
-        public void limpiarLabels()
+        public void limpiarLabels()//Se Cambia el Texto de los Label
         {
             lbRaiz.Text = "Ninguno";
             lbER.Text = "Ninguno";
-            lbIteraciones.Text = "Ninguna"; ;
+            lbIteraciones.Text = "Ninguna"; 
             lbFuncion.Text = "Ninguna";
 
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)//Acciones del boton limpiar
         {
-            dgvTabla_resultados.Rows.Clear();
+            dgvTabla_resultados.Rows.Clear();//Se limpia las filas 
+            //se limpian los textbox
             txtFx.Text = null;
             txtGx.Text = null;
             txtMaxi.Text = null;
@@ -261,24 +264,19 @@ namespace PuntoFijo
             txtVi.Text = null;
             limpiarLabels();
             txtFx.Focus();
-        }
-
-        private void btnAyuda_Click(object sender, EventArgs e)
-        {
-
-            Informacion2 i = new Informacion2();
-            i.ShowDialog();
-            
-
-
-        }
-
-        private void txtFx_TextChanged(object sender, EventArgs e)
-        {
-           /* chart1.Series["Gx"].Points.Clear();
+            //Se Limpian los Puntos de la Grafica
+            chart1.Series["Gx"].Points.Clear();
             chart1.Series["Identidad"].Points.Clear();
-            chart1.Titles.Clear();*/
+            chart1.Titles.Clear();
+
         }
+
+        private void btnAyuda_Click(object sender, EventArgs e)//Abre la Ventana de Ayuda
+        {
+            Informacion2 i = new Informacion2();
+            i.ShowDialog();     
+        }
+
     }
   
 }

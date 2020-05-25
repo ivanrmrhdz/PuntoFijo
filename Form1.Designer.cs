@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,20 +54,21 @@
             this.btnCheck = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbFuncion = new System.Windows.Forms.Label();
+            this.lbIteraciones = new System.Windows.Forms.Label();
+            this.lbER = new System.Windows.Forms.Label();
+            this.lbRaiz = new System.Windows.Forms.Label();
             this.dgvTabla_resultados = new System.Windows.Forms.DataGridView();
+            this.col_n = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_x = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_gdex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_er = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.col_n = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_x = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_gdex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_er = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbRaiz = new System.Windows.Forms.Label();
-            this.lbER = new System.Windows.Forms.Label();
-            this.lbIteraciones = new System.Windows.Forms.Label();
-            this.lbFuncion = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -246,87 +247,87 @@
             // 
             // chart1
             // 
-            chartArea5.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal;
-            chartArea5.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position;
-            chartArea5.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea5.AxisX.Crossing = 0D;
-            chartArea5.AxisX.Interval = 1D;
-            chartArea5.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea5.AxisX.IsLabelAutoFit = false;
-            chartArea5.AxisX.IsMarginVisible = false;
-            chartArea5.AxisX.IsStartedFromZero = false;
-            chartArea5.AxisX.LabelAutoFitMaxFontSize = 8;
-            chartArea5.AxisX.LabelAutoFitStyle = ((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles)((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) 
+            chartArea3.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal;
+            chartArea3.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position;
+            chartArea3.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea3.AxisX.Crossing = 0D;
+            chartArea3.AxisX.Interval = 1D;
+            chartArea3.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea3.AxisX.IsLabelAutoFit = false;
+            chartArea3.AxisX.IsMarginVisible = false;
+            chartArea3.AxisX.IsStartedFromZero = false;
+            chartArea3.AxisX.LabelAutoFitMaxFontSize = 8;
+            chartArea3.AxisX.LabelAutoFitStyle = ((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles)((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) 
             | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.StaggeredLabels) 
             | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep30) 
             | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep45) 
             | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.WordWrap)));
-            chartArea5.AxisX.LabelStyle.Angle = 2;
-            chartArea5.AxisX.LabelStyle.Interval = 5D;
-            chartArea5.AxisX.LineColor = System.Drawing.Color.Red;
-            chartArea5.AxisX.MajorGrid.LineColor = System.Drawing.Color.Gray;
-            chartArea5.AxisX.Maximum = 5D;
-            chartArea5.AxisX.Minimum = -5D;
-            chartArea5.AxisX.MinorGrid.LineColor = System.Drawing.Color.Gray;
-            chartArea5.AxisX.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.Wave;
-            chartArea5.AxisX.ScaleBreakStyle.Enabled = true;
-            chartArea5.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
-            chartArea5.AxisX2.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines;
-            chartArea5.AxisX2.Crossing = 0D;
-            chartArea5.AxisX2.Maximum = 5D;
-            chartArea5.AxisX2.Minimum = -5D;
-            chartArea5.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea5.AxisY.Crossing = 0D;
-            chartArea5.AxisY.Interval = 1D;
-            chartArea5.AxisY.LabelAutoFitMaxFontSize = 8;
-            chartArea5.AxisY.LabelAutoFitStyle = ((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles)((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) 
+            chartArea3.AxisX.LabelStyle.Angle = 2;
+            chartArea3.AxisX.LabelStyle.Interval = 5D;
+            chartArea3.AxisX.LineColor = System.Drawing.Color.Red;
+            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea3.AxisX.Maximum = 5D;
+            chartArea3.AxisX.Minimum = -5D;
+            chartArea3.AxisX.MinorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea3.AxisX.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.Wave;
+            chartArea3.AxisX.ScaleBreakStyle.Enabled = true;
+            chartArea3.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea3.AxisX2.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Lines;
+            chartArea3.AxisX2.Crossing = 0D;
+            chartArea3.AxisX2.Maximum = 5D;
+            chartArea3.AxisX2.Minimum = -5D;
+            chartArea3.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea3.AxisY.Crossing = 0D;
+            chartArea3.AxisY.Interval = 1D;
+            chartArea3.AxisY.LabelAutoFitMaxFontSize = 8;
+            chartArea3.AxisY.LabelAutoFitStyle = ((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles)((((((System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.IncreaseFont | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.DecreaseFont) 
             | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.StaggeredLabels) 
             | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep30) 
             | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.LabelsAngleStep45) 
             | System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles.WordWrap)));
-            chartArea5.AxisY.LabelStyle.Interval = 5D;
-            chartArea5.AxisY.LineColor = System.Drawing.Color.Red;
-            chartArea5.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
-            chartArea5.AxisY.Maximum = 5D;
-            chartArea5.AxisY.Minimum = -5D;
-            chartArea5.AxisY.MinorGrid.LineColor = System.Drawing.Color.Gray;
-            chartArea5.AxisY2.Maximum = 6D;
-            chartArea5.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea5.BorderColor = System.Drawing.Color.White;
-            chartArea5.InnerPlotPosition.Auto = false;
-            chartArea5.InnerPlotPosition.Height = 88.4641F;
-            chartArea5.InnerPlotPosition.Width = 86F;
-            chartArea5.InnerPlotPosition.X = 14F;
-            chartArea5.InnerPlotPosition.Y = 5F;
-            chartArea5.IsSameFontSizeForAllAxes = true;
-            chartArea5.Name = "ChartArea1";
-            chartArea5.ShadowColor = System.Drawing.Color.DarkGray;
-            this.chart1.ChartAreas.Add(chartArea5);
+            chartArea3.AxisY.LabelStyle.Interval = 5D;
+            chartArea3.AxisY.LineColor = System.Drawing.Color.Red;
+            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea3.AxisY.Maximum = 5D;
+            chartArea3.AxisY.Minimum = -5D;
+            chartArea3.AxisY.MinorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea3.AxisY2.Maximum = 6D;
+            chartArea3.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea3.BorderColor = System.Drawing.Color.White;
+            chartArea3.InnerPlotPosition.Auto = false;
+            chartArea3.InnerPlotPosition.Height = 88.4641F;
+            chartArea3.InnerPlotPosition.Width = 86F;
+            chartArea3.InnerPlotPosition.X = 14F;
+            chartArea3.InnerPlotPosition.Y = 5F;
+            chartArea3.IsSameFontSizeForAllAxes = true;
+            chartArea3.Name = "ChartArea1";
+            chartArea3.ShadowColor = System.Drawing.Color.DarkGray;
+            this.chart1.ChartAreas.Add(chartArea3);
             this.chart1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
-            this.chart1.Location = new System.Drawing.Point(462, 111);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
+            this.chart1.Location = new System.Drawing.Point(413, 74);
             this.chart1.Name = "chart1";
-            series9.BorderColor = System.Drawing.Color.Gray;
-            series9.BorderWidth = 2;
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series9.Color = System.Drawing.Color.Lime;
-            series9.LabelBorderWidth = 2;
-            series9.Legend = "Legend1";
-            series9.Name = "Gx";
-            series10.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
-            series10.BorderColor = System.Drawing.Color.White;
-            series10.BorderWidth = 2;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series10.Color = System.Drawing.Color.DarkBlue;
-            series10.LabelBorderWidth = 2;
-            series10.Legend = "Legend1";
-            series10.Name = "Identidad";
-            this.chart1.Series.Add(series9);
-            this.chart1.Series.Add(series10);
-            this.chart1.Size = new System.Drawing.Size(510, 369);
+            series5.BorderColor = System.Drawing.Color.Gray;
+            series5.BorderWidth = 2;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Color = System.Drawing.Color.Lime;
+            series5.LabelBorderWidth = 2;
+            series5.Legend = "Legend1";
+            series5.Name = "Gx";
+            series6.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            series6.BorderColor = System.Drawing.Color.White;
+            series6.BorderWidth = 2;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Color = System.Drawing.Color.DarkBlue;
+            series6.LabelBorderWidth = 2;
+            series6.Legend = "Legend1";
+            series6.Name = "Identidad";
+            this.chart1.Series.Add(series5);
+            this.chart1.Series.Add(series6);
+            this.chart1.Size = new System.Drawing.Size(574, 426);
             this.chart1.TabIndex = 7;
             this.chart1.Text = "Grafica";
             this.chart1.UseWaitCursor = true;
@@ -384,6 +385,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.lbFuncion);
             this.panel3.Controls.Add(this.lbIteraciones);
             this.panel3.Controls.Add(this.lbER);
@@ -397,13 +399,53 @@
             this.panel3.Controls.Add(this.btnCheck);
             this.panel3.Controls.Add(this.btnSalir);
             this.panel3.Controls.Add(this.panel2);
-            this.panel3.Controls.Add(this.chart1);
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.btnLimpiar);
+            this.panel3.Controls.Add(this.chart1);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(975, 1192);
             this.panel3.TabIndex = 0;
+            // 
+            // lbFuncion
+            // 
+            this.lbFuncion.AutoSize = true;
+            this.lbFuncion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFuncion.Location = new System.Drawing.Point(701, 664);
+            this.lbFuncion.Name = "lbFuncion";
+            this.lbFuncion.Size = new System.Drawing.Size(75, 20);
+            this.lbFuncion.TabIndex = 21;
+            this.lbFuncion.Text = "Ninguna";
+            // 
+            // lbIteraciones
+            // 
+            this.lbIteraciones.AutoSize = true;
+            this.lbIteraciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIteraciones.Location = new System.Drawing.Point(468, 664);
+            this.lbIteraciones.Name = "lbIteraciones";
+            this.lbIteraciones.Size = new System.Drawing.Size(75, 20);
+            this.lbIteraciones.TabIndex = 20;
+            this.lbIteraciones.Text = "Ninguna";
+            // 
+            // lbER
+            // 
+            this.lbER.AutoSize = true;
+            this.lbER.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbER.Location = new System.Drawing.Point(265, 664);
+            this.lbER.Name = "lbER";
+            this.lbER.Size = new System.Drawing.Size(75, 20);
+            this.lbER.TabIndex = 19;
+            this.lbER.Text = "Ninguno";
+            // 
+            // lbRaiz
+            // 
+            this.lbRaiz.AutoSize = true;
+            this.lbRaiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRaiz.Location = new System.Drawing.Point(26, 662);
+            this.lbRaiz.Name = "lbRaiz";
+            this.lbRaiz.Size = new System.Drawing.Size(75, 20);
+            this.lbRaiz.TabIndex = 18;
+            this.lbRaiz.Text = "Ninguno";
             // 
             // dgvTabla_resultados
             // 
@@ -418,6 +460,38 @@
             this.dgvTabla_resultados.RowHeadersWidth = 62;
             this.dgvTabla_resultados.Size = new System.Drawing.Size(900, 400);
             this.dgvTabla_resultados.TabIndex = 17;
+            // 
+            // col_n
+            // 
+            this.col_n.HeaderText = "N";
+            this.col_n.MinimumWidth = 8;
+            this.col_n.Name = "col_n";
+            this.col_n.ReadOnly = true;
+            this.col_n.Width = 85;
+            // 
+            // col_x
+            // 
+            this.col_x.HeaderText = "X";
+            this.col_x.MinimumWidth = 8;
+            this.col_x.Name = "col_x";
+            this.col_x.ReadOnly = true;
+            this.col_x.Width = 250;
+            // 
+            // col_gdex
+            // 
+            this.col_gdex.HeaderText = "g(x)";
+            this.col_gdex.MinimumWidth = 8;
+            this.col_gdex.Name = "col_gdex";
+            this.col_gdex.ReadOnly = true;
+            this.col_gdex.Width = 250;
+            // 
+            // col_er
+            // 
+            this.col_er.HeaderText = "Porcentaje de Error";
+            this.col_er.MinimumWidth = 8;
+            this.col_er.Name = "col_er";
+            this.col_er.ReadOnly = true;
+            this.col_er.Width = 250;
             // 
             // label12
             // 
@@ -469,77 +543,16 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "Resultados";
             // 
-            // col_n
+            // label13
             // 
-            this.col_n.HeaderText = "N";
-            this.col_n.MinimumWidth = 8;
-            this.col_n.Name = "col_n";
-            this.col_n.ReadOnly = true;
-            this.col_n.Width = 85;
-            // 
-            // col_x
-            // 
-            this.col_x.HeaderText = "X";
-            this.col_x.MinimumWidth = 8;
-            this.col_x.Name = "col_x";
-            this.col_x.ReadOnly = true;
-            this.col_x.Width = 250;
-            // 
-            // col_gdex
-            // 
-            this.col_gdex.HeaderText = "g(x)";
-            this.col_gdex.MinimumWidth = 8;
-            this.col_gdex.Name = "col_gdex";
-            this.col_gdex.ReadOnly = true;
-            this.col_gdex.Width = 250;
-            // 
-            // col_er
-            // 
-            this.col_er.HeaderText = "ER";
-            this.col_er.MinimumWidth = 8;
-            this.col_er.Name = "col_er";
-            this.col_er.ReadOnly = true;
-            this.col_er.Width = 250;
-            // 
-            // lbRaiz
-            // 
-            this.lbRaiz.AutoSize = true;
-            this.lbRaiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRaiz.Location = new System.Drawing.Point(26, 662);
-            this.lbRaiz.Name = "lbRaiz";
-            this.lbRaiz.Size = new System.Drawing.Size(75, 20);
-            this.lbRaiz.TabIndex = 18;
-            this.lbRaiz.Text = "Ninguno";
-            // 
-            // lbER
-            // 
-            this.lbER.AutoSize = true;
-            this.lbER.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbER.Location = new System.Drawing.Point(265, 664);
-            this.lbER.Name = "lbER";
-            this.lbER.Size = new System.Drawing.Size(75, 20);
-            this.lbER.TabIndex = 19;
-            this.lbER.Text = "Ninguno";
-            // 
-            // lbIteraciones
-            // 
-            this.lbIteraciones.AutoSize = true;
-            this.lbIteraciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIteraciones.Location = new System.Drawing.Point(468, 664);
-            this.lbIteraciones.Name = "lbIteraciones";
-            this.lbIteraciones.Size = new System.Drawing.Size(75, 20);
-            this.lbIteraciones.TabIndex = 20;
-            this.lbIteraciones.Text = "Ninguna";
-            // 
-            // lbFuncion
-            // 
-            this.lbFuncion.AutoSize = true;
-            this.lbFuncion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFuncion.Location = new System.Drawing.Point(701, 664);
-            this.lbFuncion.Name = "lbFuncion";
-            this.lbFuncion.Size = new System.Drawing.Size(75, 20);
-            this.lbFuncion.TabIndex = 21;
-            this.lbFuncion.Text = "Ninguna";
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(105, 1139);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(698, 20);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Si no se muestran el número de Iteraciones Insertadas(+1) pruebe reducir el valor" +
+    " de la Tolerancia";
             // 
             // Form1
             // 
@@ -552,6 +565,7 @@
             this.MaximumSize = new System.Drawing.Size(1016, 594);
             this.MinimumSize = new System.Drawing.Size(857, 454);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Punto Fijo";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
@@ -605,6 +619,7 @@
         private System.Windows.Forms.Label lbIteraciones;
         private System.Windows.Forms.Label lbER;
         private System.Windows.Forms.Label lbRaiz;
+        private System.Windows.Forms.Label label13;
     }
 }
 
