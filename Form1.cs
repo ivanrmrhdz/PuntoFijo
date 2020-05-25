@@ -151,7 +151,6 @@ namespace PuntoFijo
             }
 
         }
-
         void PuntoFijo(double valorInicial, double tolerancia, int iteracionesMax)
         {
             //Se Limpian los Puntos Para Evitar Sobrecargas 
